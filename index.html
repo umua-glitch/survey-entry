@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>水筒の選び方に関するアンケート</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;color:#1f2a5a;background:#fff;text-align:center;padding:16px}
+  p{margin:0 0 16px;font-size:18px;line-height:1.7}
+  a.btn{display:inline-block;padding:14px 28px;border-radius:10px;background:#1f2a5a;color:#fff;text-decoration:none;font-size:18px}
+</style>
+</head>
+<body>
+<main>
+  <p>アンケートのページを開いています…</p>
+  <p id="fallback" hidden>自動で開かない場合は、下のボタンを押してください。</p>
+  <a id="go" class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfMfHsUQacTx1nazibIH0jehwYUU_YtfONI8Ro8AUsxS5Rk4g/viewform" hidden>アンケートを開く</a>
+</main>
+<script>
+(function () {
+  var forms = [
+    "https://docs.google.com/forms/d/e/1FAIpQLSfMfHsUQacTx1nazibIH0jehwYUU_YtfONI8Ro8AUsxS5Rk4g/viewform",
+    "https://docs.google.com/forms/d/e/1FAIpQLSdcov9Nk5dPVCKkPygnwqYCr8Czchafh0xkD2y6IM2NDE1Xpg/viewform"
+  ];
+  var i = Math.floor(Math.random() * 2);
+  var go = document.getElementById("go");
+  go.href = forms[i];
+  setTimeout(function () {
+    document.getElementById("fallback").hidden = false;
+    go.hidden = false;
+  }, 2500);
+  location.replace(forms[i]);
+})();
+</script>
+<noscript><p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfMfHsUQacTx1nazibIH0jehwYUU_YtfONI8Ro8AUsxS5Rk4g/viewform">アンケートを開く</a></p></noscript>
+</body>
+</html>
